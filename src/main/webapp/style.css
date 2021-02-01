@@ -16,3 +16,13 @@
 .editor-navbar-pills-background {
     background-color: black;
 }
+
+.editor-module-list-background {
+    background-color: black;
+}
+
+.editor-module-list {
+    background-color: black;
+    /*margin: auto;*/
+    padding: 16px;
+}
