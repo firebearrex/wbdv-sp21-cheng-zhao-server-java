@@ -26,3 +26,7 @@
     /*margin: auto;*/
     padding: 16px;
 }
+
+.navbar-light {
+    background-color: #e3f2fd;
+}

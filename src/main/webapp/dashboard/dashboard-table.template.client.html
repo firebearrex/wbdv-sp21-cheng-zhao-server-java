@@ -3,10 +3,33 @@
 <head>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../style.css">
     <meta charset="UTF-8">
     <title>Dashboard</title>
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-brand me-2 row" href="#">
+                <a class="fas fa-bars fa-1x col-2" href="#"></a>
+                <a class="col-10" href="#">Course Manager</a>
+                <!--                <div class="row">-->
+                <!--                </div>-->
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse show" id="navbarCollapse">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="New Course Title" aria-label="New Course Title">
+                    <button class="btn fas fa-plus-circle" type="submit"></button>
+<!--                    <i class="fas fa-plus-circle"></i>-->
+                </form>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <h1>Dashboard Table</h1>
         <table class="table table-striped">
