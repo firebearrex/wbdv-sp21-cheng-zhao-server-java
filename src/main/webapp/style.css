@@ -8,3 +8,11 @@
 /*.color-blue {*/
 /*    color:blue;*/
 /*}*/
+
+.editor-navbar-background {
+    background-color: grey;
+}
+
+.editor-navbar-pills-background {
+    background-color: black;
+}
