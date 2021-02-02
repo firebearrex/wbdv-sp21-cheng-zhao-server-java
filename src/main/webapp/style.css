@@ -5,6 +5,13 @@
     width: 100%;
 }
 
+.table-header-sticky-background {
+    background-color: grey;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+}
+
 /*.color-blue {*/
 /*    color:blue;*/
 /*}*/
@@ -29,4 +36,8 @@
 
 .navbar-light {
     background-color: #e3f2fd;
+}
+
+.extra-top-padding {
+    padding-top: 58px;
 }
