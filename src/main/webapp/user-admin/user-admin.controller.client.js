@@ -18,7 +18,7 @@
     var $roleFld
     var $editFld
 
-    var userService = new AdminUserServiceClient();
+    // var userService = new AdminUserServiceClient();
 
     var users = [
         {username: "CS4550", password: "02", firstname: 23, lastname: "Spring", role: "student"},
@@ -27,19 +27,56 @@
     ]
 
     function createUser() {
+        // alert("JS is working")
+        var newCourse = {
+            username: $usernameFld.val(),
+            password: $passwordFld.val(),
+            firstname: $firstNameFld.val(),
+            lastname: $lastNameFld.val(),
+            role: $roleFld.val()
+        }
 
+        // here a service instance should be created
+
+        users.push(newCourse)
+        renderUsers(users)
     }
 
-    function deleteUser() {
+    function deleteUser(event) {
+        var button = $(event.target)
+        var index = button.attr("id")
+        var id = users[index]._id
     }
 
-    function selectUser() {
+    function editUser() {
     }
 
     function updateUser() {
     }
 
     function renderUsers(users) {
+        $tbody.empty()
+        for (var i = 0; i < users.length; ++i) {
+            var user = users[i]
+            $tbody
+                .prepend(`
+                <tr class="wbdv-user">
+                    <td class="wbdv-username">${user.username}</td>
+                    <td>&nbsp;</td>
+                    <td class="wbdv-first-name">${user.firstname}</td>
+                    <td class="wbdv-last-name">${user.lastname}</td>
+                    <td class="wbdv-role">${user.role}</td>
+                    <td class="wbdv-actions">
+                        <span class="pull-right">
+                            <button id="${i}" btn fa-2x fa fa-times wbdv-remove"></button>
+                            <button id="${course._id}" class="btn fa-2x fa fa-pencil wbdv-edit"></button>
+                        </span>
+                    </td>
+                </tr>
+                `)
+        }
+        $(".wbdv-remove").click(deleteUser)
+        $(".wbdv-edit").click(editUser)
     }
 
     function findAllUsers() {
@@ -57,16 +94,21 @@
         $editBtn = $(".wbdv-edit")
         $removeBtn = $(".wbdv-remove")
 
-        $usernameFld = $("usernameFld")
-        $passwordFld = $("passwordFld")
-        $firstNameFld = $("firstNameFld")
-        $lastNameFld = $("lastNameFld")
-        $roleFld = $("roleFld")
-        $editFld = $("editFld")
+        $usernameFld = $("#usernameFld")
+        $passwordFld = $("#passwordFld")
+        $firstNameFld = $("#firstNameFld")
+        $lastNameFld = $("#lastNameFld")
+        $roleFld = $("#roleFld")
+        $editFld = $("#editFld")
 
         // $(".wbdv-hidden").hide()
 
+        $updateBtn.click(updateUser)
+        $createBtn.click(createUser)
+        $removeBtn.click(deleteUser)
+        $editBtn.click(editUser)
 
+        renderUsers(users)
     }
 
     $(main);
