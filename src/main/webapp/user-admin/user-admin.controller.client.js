@@ -66,17 +66,24 @@ function editUser(event) {
 }
 
 function updateUser() {
-    selectedUser.username = $usernameFld.val()
-    selectedUser.password = $passwordFld.val()
-    selectedUser.firstname = $firstNameFld.val()
-    selectedUser.lastname = $lastNameFld.val()
-    selectedUser.role = $roleFld.val()
-    userService.updateUser(selectedUser._id, selectedUser)
-        .then(status => {
-            var index = users.findIndex(user => user._id === selectedUser._id)
-            users[index] = selectedUser
-            renderUsers(users)
-        })
+    if (selectedUser == null) {
+        alert("Please select a user to edit before updating");
+    } else {
+        selectedUser.username = $usernameFld.val();
+        selectedUser.password = $passwordFld.val()
+        selectedUser.firstname = $firstNameFld.val()
+        selectedUser.lastname = $lastNameFld.val()
+        selectedUser.role = $roleFld.val()
+        clearInput()
+
+        userService.updateUser(selectedUser._id, selectedUser)
+            .then(status => {
+                var index = users.findIndex(user => user._id === selectedUser._id)
+                users[index] = selectedUser
+                renderUsers(users)
+                selectedUser = null
+            })
+    }
 }
 
 function renderUsers(users) {
@@ -106,6 +113,12 @@ function renderUsers(users) {
     $(".wbdv-edit").click(editUser)
 }
 
+function clearInput() {
+    $('input').each(function () {
+        $(this).val('')
+    })
+}
+
 // function findAllUsers() {
 // } // optional - might not need this
 
@@ -132,6 +145,7 @@ function main() {
 
     $createBtn.click(createUser)
     $updateBtn.click(updateUser)
+    // $updateBtn.click(clearInput)
     // $removeBtn.click(deleteUser)
     // $editBtn.click(editUser)
 
