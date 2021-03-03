@@ -34,6 +34,7 @@ function createUser() {
         lastname: $lastNameFld.val(),
         role: $roleFld.val()
     }
+    clearInput();
 
     // here a service instance should be created
     userService.createUser(newUser)
