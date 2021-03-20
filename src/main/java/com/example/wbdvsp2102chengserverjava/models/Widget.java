@@ -1,16 +1,25 @@
 package com.example.wbdvsp2102chengserverjava.models;
 
 public class Widget {
-    private Long id;
-    private String topicId;
+    private String name;
+    private Integer id;
     private String type;
-    private Integer size;
+    private Integer widgetOrder;
     private String text;
+    private String src;
+    private Integer size;
+//    private String topicId;
+    private Integer width;
+    private Integer height;
+    private String cssClass;
+    private String style;
+    private String value;
+    private String topicId;
 
     public Widget() {
     }
 
-    public Widget(Long id, String topicId, String type, Integer size, String text) {
+    public Widget(Integer id, String topicId, String type, Integer size, String text) {
         this.id = id;
         this.topicId = topicId;
         this.type = type;
@@ -18,11 +27,11 @@ public class Widget {
         this.text = text;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
