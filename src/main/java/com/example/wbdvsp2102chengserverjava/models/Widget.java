@@ -8,7 +8,6 @@ public class Widget {
     private String text;
     private String src;
     private Integer size;
-//    private String topicId;
     private Integer width;
     private Integer height;
     private String cssClass;

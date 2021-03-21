@@ -46,8 +46,8 @@ public class WidgetService {
             e.printStackTrace();
             System.out.println(e.getMessage());
         }
-        widget.setType("Heading");
-        widget.setSize(1);
+//        widget.setType("Heading");
+//        widget.setSize(1);
         widgets.add(widget);
 
         return widget;
