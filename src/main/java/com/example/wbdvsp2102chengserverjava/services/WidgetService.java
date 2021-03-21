@@ -11,11 +11,11 @@ import java.util.List;
 public class WidgetService {
     private List<Widget> widgets = new ArrayList<Widget>();
     {
-        Widget w1 = new Widget(123, "ABC123", "HEADING", 1, "111@Welcome to WebDev!");
-        Widget w2 = new Widget(234, "ABC123", "PARAGRAPH", 1, "222@Welcome to WebDev!");
-        Widget w3 = new Widget(345, "ABC234", "HEADING", 2, "333@Welcome to WebDev!");
-        Widget w4 = new Widget(456, "ABC234", "PARAGRAPH", 1, "444@Welcome to WebDev!");
-        Widget w5 = new Widget(456, "ABC234", "PARAGRAPH", 1, "555@Welcome to WebDev!");
+        Widget w1 = new Widget(123l, "ABC123", "HEADING", 1, "111@Welcome to WebDev!");
+        Widget w2 = new Widget(234l, "ABC123", "PARAGRAPH", 1, "222@Welcome to WebDev!");
+        Widget w3 = new Widget(345l, "ABC234", "HEADING", 2, "333@Welcome to WebDev!");
+        Widget w4 = new Widget(456l, "ABC234", "PARAGRAPH", 1, "444@Welcome to WebDev!");
+        Widget w5 = new Widget(456l, "ABC234", "PARAGRAPH", 1, "555@Welcome to WebDev!");
 
         widgets.add(w1);
         widgets.add(w2);
@@ -41,7 +41,7 @@ public class WidgetService {
     public Widget createWidget(String tid, Widget widget) {
         widget.setTopicId(tid);
         try {
-            widget.setId(Math.toIntExact(new Date().getTime()));
+            widget.setId(new Date().getTime());
         } catch (ArithmeticException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
@@ -57,10 +57,10 @@ public class WidgetService {
         int status = 0;
 
         for (int i = 0; i < widgets.size(); ++i) {
-            int widgetId = -1;
+            long widgetId = -1;
 
             try {
-                widgetId = Integer.parseInt(wid);
+                widgetId = Long.parseLong(wid);
             } catch (NumberFormatException e) {
                 e.printStackTrace();
                 System.out.println(e.getMessage());
@@ -79,10 +79,10 @@ public class WidgetService {
         int status = 0;
 
         for (int i = 0; i < widgets.size(); ++i) {
-            int widgetId = -1;
+            long widgetId = -1;
 
             try {
-                widgetId = Integer.parseInt(wid);
+                widgetId = Long.parseLong(wid);
             } catch (NumberFormatException e) {
                 e.printStackTrace();
                 System.out.println(e.getMessage());
@@ -99,10 +99,10 @@ public class WidgetService {
 
     public Widget findWidgetById(String wid) {
         for (Widget widget : widgets) {
-            int widgetId = -1;
+            long widgetId = -1;
 
             try {
-                widgetId = Integer.parseInt(wid);
+                widgetId = Long.parseLong(wid);
             } catch (NumberFormatException e) {
                 e.printStackTrace();
                 System.out.println(e.getMessage());

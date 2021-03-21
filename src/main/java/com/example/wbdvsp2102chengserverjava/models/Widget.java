@@ -2,7 +2,7 @@ package com.example.wbdvsp2102chengserverjava.models;
 
 public class Widget {
     private String name;
-    private Integer id;
+    private Long id;
     private String type;
     private Integer widgetOrder;
     private String text;
@@ -18,7 +18,7 @@ public class Widget {
     public Widget() {
     }
 
-    public Widget(Integer id, String topicId, String type, Integer size, String text) {
+    public Widget(Long id, String topicId, String type, Integer size, String text) {
         this.id = id;
         this.topicId = topicId;
         this.type = type;
@@ -26,11 +26,11 @@ public class Widget {
         this.text = text;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
