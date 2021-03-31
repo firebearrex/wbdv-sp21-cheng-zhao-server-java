@@ -33,6 +33,22 @@ public class Widget {
         this.text = text;
     }
 
+    public Widget(String name, Long id, String type, String text, Integer size, String src, Integer width, Integer height, String cssClass, String style, String value, Boolean widgetOrdered, String topicId) {
+        this.name = name;
+        this.id = id;
+        this.type = type;
+        this.text = text;
+        this.size = size;
+        this.src = src;
+        this.width = width;
+        this.height = height;
+        this.cssClass = cssClass;
+        this.style = style;
+        this.value = value;
+        this.widgetOrdered = widgetOrdered;
+        this.topicId = topicId;
+    }
+
     public Long getId() {
         return id;
     }
