@@ -13,7 +13,11 @@ public class Widget {
     private String type;
     private String text;
     private Integer size;
+
+    @Lob
+    @Column
     private String src;
+
     private Integer width;
     private Integer height;
     private String cssClass;
